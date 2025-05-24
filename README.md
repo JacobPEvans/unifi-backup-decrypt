@@ -1,11 +1,15 @@
 # UniFi backup file (.unf) / support file (.supp) decryption
 
-## Requirement
+It should be trivial to write a script that helps import/export. If anybody wants to contribute, PRs are welcomed.
+
+## Linux
+
+### Requirement
 
 * openssl
 * zip
 
-## Some code snippet
+### Some code snippet
 
 ```
 final Cipher instance = Cipher.getInstance("AES/CBC/NoPadding");
@@ -15,10 +19,16 @@ return new CipherInputStream(inputStream, instance);
 
 malformed zip files require fixing before unzip
 
-## Database
+### Database
 
 `db.gz` contains a stream of BSON document for each collections of `ace` database.
 
 You can view its content by `gunzip -c db.gz | bsondump`.
 
-It should be trivial to write a script that helps import/export. If anybody wants to contribute, PRs are welcomed.
+## Windows
+
+### Requirement
+
+* tar
+* openssl
+* mongodb-database-tools (for bsondump)
