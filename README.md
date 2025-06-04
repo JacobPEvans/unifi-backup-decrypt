@@ -8,6 +8,7 @@ It should be trivial to write a script that helps import/export. If anybody want
 
 * openssl
 * zip
+* mongo-tools (for bsondump)
 
 ### Some code snippet
 
